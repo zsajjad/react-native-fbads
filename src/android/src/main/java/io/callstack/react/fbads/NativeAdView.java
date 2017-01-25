@@ -11,13 +11,16 @@ import android.view.MotionEvent;
 
 import com.facebook.ads.NativeAd;
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.facebook.react.views.view.ReactViewGroup;
 
 public class NativeAdView extends ReactViewGroup {
-    /** @{NativeAd} received from the ads manager **/
+
+    private ReactContext mContext;
+  /** @{NativeAd} received from the ads manager **/
     private NativeAd mNativeAd;
 
     /** @{RCTEventEmitter} instance used for sending events back to JS **/
@@ -36,6 +39,7 @@ public class NativeAdView extends ReactViewGroup {
      */
     public NativeAdView(ThemedReactContext context) {
         super(context);
+        mContext = context;
 
         mEventEmitter = context.getJSModule(RCTEventEmitter.class);
     }
@@ -77,7 +81,14 @@ public class NativeAdView extends ReactViewGroup {
 
         mEventEmitter.receiveEvent(getId(), "onAdLoaded", event);
 
-        mNativeAd.registerViewForInteraction(this);
+//        AdChoicesView adChoicesView = new AdChoicesView(mContext, nativeAd, true);
+//        adChoicesView.measure(500, 500);
+//        adChoicesView.layout(0, 150, 500, 650);
+//        adChoicesView.bringToFront();
+//
+//        addView(adChoicesView, 0);
+
+//        mNativeAd.registerViewForInteraction(this);
     }
 
     /**

@@ -8,7 +8,7 @@ import React from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
 
 import FullAd from './components/FullAd';
-import { NativeAdsManager, InterstitialAdManager, BannerView } from '../';
+import { NativeAdsManager, InterstitialAdManager, BannerView, AdChoices } from '../';
 
 const adsManager = new NativeAdsManager('1912255062335197_1912257885668248');
 
@@ -37,7 +37,12 @@ class MainApp extends React.Component {
           is that they nicely integrate with the general
           app look & feel
         </Text>
-        <FullAd adsManager={adsManager} />
+        <FullAd adsManager={adsManager}>
+          <AdChoices
+            adsManager={adsManager.toJSON()}
+            style={{backgroundColor: 'black', width: 100, height: 100}}
+          />
+        </FullAd>
         <TouchableOpacity onPress={this.showFullScreenAd}>
           <Text>Show interstitial ad</Text>
         </TouchableOpacity>

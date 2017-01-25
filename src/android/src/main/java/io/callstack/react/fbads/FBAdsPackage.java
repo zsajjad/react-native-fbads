@@ -24,6 +24,7 @@ public class FBAdsPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
+           new NativeAdChoicesViewManager(reactContext),
            new NativeAdManager(reactContext),
            new AdSettingsManager(reactContext),
            new InterstitialAdManager(reactContext)
@@ -38,6 +39,7 @@ public class FBAdsPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
+           new NativeAdChoicesViewManager(reactContext),
            new NativeAdViewManager(reactContext),
            new BannerViewManager(reactContext)
         );
