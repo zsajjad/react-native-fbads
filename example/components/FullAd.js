@@ -29,6 +29,7 @@ const FullNativeAd = withNativeAd(({ nativeAd }) => (
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    backgroundColor: 'pink',
   },
   icon: {
     width: 50,

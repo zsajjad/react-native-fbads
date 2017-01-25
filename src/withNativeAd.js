@@ -71,7 +71,6 @@ export default (Component: Function) => class NativeAdWrapper extends React.Comp
         onAdLoaded={(e) => this.setState({ ad: e.nativeEvent })}
       >
         {this.state.ad && <Component nativeAd={this.state.ad} {...props} />}
-        {this.props.children}
       </NativeAdView>
     );
   }

@@ -13,4 +13,3 @@ export { default as AdSettings } from './AdSettings';
 export { default as NativeAdsManager } from './NativeAdsManager';
 export { default as InterstitialAdManager } from './InterstitialAdManager';
 export { default as BannerView } from './BannerViewManager';
-export { default as AdChoices } from './AdChoicesManager';
